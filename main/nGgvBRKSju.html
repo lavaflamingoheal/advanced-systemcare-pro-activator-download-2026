@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calculator</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+}
+#calculator {
+width: 300px;
+padding: 20px;
+border: 1px solid #ccc;
+background: white;
+}
+input[type='text'] {
+width: 100%;
+margin-bottom: 10px;
+padding: 10px;
+}
+button {
+width: 70px;
+padding: 10px;
+margin: 5px;
+}
+</style>
+</head>
+<body>
+<div id="calculator">
+<h2>Calculator</h2>
+<input type="text" id="result" disabled>
+<br>
+<button onclick="clearResult()">C</button>
+<button onclick="appendToResult('7')">7</button>
+<button onclick="appendToResult('8')">8</button>
+<button onclick="appendToResult('9')">9</button>
+<button onclick="appendToResult('/')">/</button>
+<br>
+<button onclick="appendToResult('4')">4</button>
+<button onclick="appendToResult('5')">5</button>
+<button onclick="appendToResult('6')">6</button>
+<button onclick="appendToResult('*')">*</button>
+<br>
+<button onclick="appendToResult('1')">1</button>
+<button onclick="appendToResult('2')">2</button>
+<button onclick="appendToResult('3')">3</button>
+<button onclick="appendToResult('-')">-</button>
+<br>
+<button onclick="appendToResult('0')">0</button>
+<button onclick="calculateResult()">=</button>
+<button onclick="appendToResult('+')">+</button>
+</div>
+<script>
+function appendToResult(value) {
+var result = document.getElementById('result');
+result.value += value;
+}
+function clearResult() {
+document.getElementById('result').value = '';
+}
+function calculateResult() {
+var result = document.getElementById('result');
+result.value = eval(result.value);
+}
+</script>
+</body>
+</html>
